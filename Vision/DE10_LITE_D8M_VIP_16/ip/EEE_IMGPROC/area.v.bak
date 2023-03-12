@@ -1,0 +1,95 @@
+module AREA(
+    clk,
+    r_x_min,
+    r_x_max,
+    r_y_min,
+    r_y_max,
+
+    y_x_min,
+    y_x_max,
+    y_y_min,
+    y_y_max,,
+
+    m_x_min,
+    m_x_max,
+    m_y_min,
+    m_y_max,,
+
+    t_x_min,
+    t_x_max,
+    t_y_min,
+    t_y_max,
+
+    l_x_min,
+    l_x_max,
+    l_y_min,
+    l_y_max,
+
+    n_x_min,
+    n_x_max,
+    n_y_min,
+    n_y_max,
+
+    b_x_min,
+    b_x_max,
+    b_y_min,
+    b_y_max,
+
+red_area,
+yellow_area,
+magenta_area,
+teal_area,
+lime_area,
+navy_area,
+building_area
+);
+
+input clk;
+
+input [10:0] r_x_min, r_x_max, r_y_min, r_y_max;
+input [10:0] y_x_min, y_x_max, y_y_min, y_y_max;
+input [10:0] m_x_min, m_x_max, m_y_min, m_y_max;
+input [10:0] t_x_min, t_x_max, t_y_min, t_y_max;
+input [10:0] l_x_min, l_x_max, l_y_min, l_y_max;
+input [10:0] n_x_min, n_x_max, n_y_min, n_y_max;
+input [10:0] b_x_min, b_x_max, b_y_min, b_y_max;
+
+output reg [15:0] red_area, yellow_area, magenta_area, teal_area, lime_area, navy_area, building_area;
+
+reg [10:0] x_red_diff, y_red_diff, x_yellow_diff, y_yellow_diff, x_magenta_diff, y_magenta_diff;
+reg [10:0] x_teal_diff, y_teal_diff, x_lime_diff, y_lime_diff, x_navy_diff, y_navy_diff, x_building_diff, y_building_diff;
+
+always @(posedge clk) begin
+    x_red_diff <= r_x_max - r_x_min;
+    y_red_diff <= r_y_max - r_y_min;
+
+    x_yellow_diff <= y_x_max - y_x_min;
+    y_yellow_diff <= y_y_max - y_y_min;
+
+    x_magenta_diff <= m_x_max - m_x_min;
+    y_magenta_diff <= m_y_max - m_y_min;
+
+    x_teal_diff <= t_x_max - t_x_min;
+    y_teal_diff <= t_y_max - t_y_min;
+
+    x_lime_diff <= l_x_max - l_x_min;
+    y_lime_diff <= l_y_max - l_y_min;
+
+x_navy_diff <= n_x_max - n_x_min;
+    y_navy_diff <= n_y_max - n_y_min;
+
+x_building_diff <= b_x_max - b_x_min;
+    y_building_diff <= b_y_max - b_y_min;
+end
+
+always @(negedge clk) begin
+    red_area <= x_red_diff * y_red_diff;
+    yellow_area <= x_yellow_diff * y_yellow_diff;
+    magenta_area <= x_magenta_diff * y_magenta_diff;
+    teal_area <= x_teal_diff * y_teal_diff;
+    lime_area <= x_lime_diff * y_lime_diff;
+navy_area <= x_navy_diff * y_navy_diff;
+building_area <= x_building_diff * y_building_diff;
+end
+
+endmodule
