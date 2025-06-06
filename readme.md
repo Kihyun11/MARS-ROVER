@@ -16,7 +16,7 @@ Designed an autonomous rover that can detect and collect the positional
 information of specific-coloured objects and build a map of certain area
 in the Mars based on the coordinates collected.
 
-# Overview
+## Overview
 Mainly worked on the Vision part of the rover which includes object
 detection, pixel-space calculation, and data transfer through registers.
 
@@ -32,7 +32,7 @@ actual distance between the object and the rover.
 Implemented 4-bit registers to store and transfer the data of detected
 object. MSB represents the detection, and the rest bits represent colour.
 
-# Images of the terrain and the Rover
+## Images of the terrain and the Rover
 
 <p float="left">
   <img src="images_MARS_ROVER/mars_rover_alien.jpg" height="350px" width="45%" />
