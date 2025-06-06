@@ -33,10 +33,11 @@ Implemented 4-bit registers to store and transfer the data of detected
 object. MSB represents the detection, and the rest bits represent colour.
 
 # Images of the terrain and the Rover
-![Terrain](images_MARS_ROVER/mars_rover_alien.jpg)
-![Rover](images_MARS_ROVER/mars_rover_pic.jpg)
 
-
+<p float="left">
+  <img src="images_MARS_ROVER/mars_rover_alien.jpg" height="350px" width="45%" />
+  <img src="images_MARS_ROVER/mars_rover_pic.jpg" height="350px" width="45%" />
+</p>
 
 
 
