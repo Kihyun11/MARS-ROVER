@@ -22,7 +22,7 @@ detection, pixel-space calculation, and data transfer through registers.
 
 Implemented HSV colour conversion algorithm for object detection to
 increase the accuracy of the object detection.
-![Structure_Diagram](images_MARS_ROVER/mars_rover_vision_diagram.jpg)
+![Structure_Diagram](images_MARS_ROVER/mars_rover_vision_design.jpg)
 
 Implemented pixel-space ratio multiplication algorithm to calculate the
 actual distance between the object and the rover.
